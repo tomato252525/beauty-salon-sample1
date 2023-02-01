@@ -10,3 +10,51 @@
     height: 100vh;
     z-index: -1;
 }
+
+.menu-trigger {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 10000;
+    margin-top: 20px;
+}
+
+.element {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+}
+
+.element.-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.element a {
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.element a:hover {
+    color: aqua;
+    transition: .3s;
+}
+
+.nav-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(254 243 199 / var(--tw-bg-opacity));
+    height: 100vh;
+    width: 100vw;
+}
+
+.menu {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
