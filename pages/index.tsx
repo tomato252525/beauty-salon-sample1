@@ -1,9 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import { Federant, Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import '@splidejs/splide/css'
+import { lookup } from 'dns'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,10 +19,34 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="home-bg">
+      <main>
         <Header />
-        <div className="fixed w-full h-screen z-[-1] overflow-hidden">
-          <Image className="object-cover" src="/sample1.jpg" layout="fill" alt="" />
+        <Splide
+          aria-label="bg"
+          options={{
+            type: 'fade',
+            rewind: true,
+            autoplay: true,
+            interval: 6000,
+            speed: 5000,
+            arrows: false,
+            pagination: false,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+          }}
+        >
+          <SplideSlide className="h-screen overflow-hidden">
+            <Image className="object-cover" src="/bg-sample1.jpg" layout="fill" alt="" />
+          </SplideSlide>
+          <SplideSlide className="h-screen overflow-hidden">
+            <Image className="object-cover" src="/bg-sample2.jpg" layout="fill" alt="" />
+          </SplideSlide>
+          <SplideSlide className="h-screen overflow-hidden">
+            <Image className="object-cover" src="/bg-sample3.jpg" layout="fill" alt="" />
+          </SplideSlide>
+        </Splide>
+        <div className="absolute inset-0 flex items-center justify-center text-white">
+          <p>Welcome Page!</p>
         </div>
         <Footer />
       </main>
