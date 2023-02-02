@@ -6,7 +6,7 @@ export default function Footer() {
             <footer className="fixed bottom-0 w-screen text-white pb-5">
                 <div className="flex justify-between pl-3 md:px-10">
                     <div>
-                        <div className="py-1 block md:flex">
+                        <div className="my-3 md:my-1 block md:flex">
                             <p>〒000-0000　</p>
                             <p>○○県○○市○○○○ 00-00</p>
                         </div>
