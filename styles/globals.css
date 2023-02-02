@@ -66,3 +66,13 @@ button {
     flex-direction: column;
     align-items: center;
 }
+
+dd::before {
+    content: "¥";
+}
+
+@media (min-width: 992px) {
+    .content {
+        margin-right: 50%;
+    }
+}
