@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+	
+a {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
 
 .splide.is-initialized {
     position: fixed;
@@ -38,7 +42,7 @@
 }
 
 .element a:hover {
-    color: aqua;
+    color: white;
     transition: .3s;
 }
 

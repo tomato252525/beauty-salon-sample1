@@ -9,9 +9,9 @@ export default function Header() {
 
     return (
         <>
-            <header className="fixed top-0 w-screen text-white z-[9999]">
+            <header className="h-16 fixed top-0 w-screen text-white z-[9999]">
                 <div className="pt-5 flex justify-between pl-3 md:pl-10">
-                    <Link className="text-4xl font-bold" href="#">B-S-1</Link>
+                    <Link className="text-4xl font-bold" href="./">B-S-1</Link>
                     <div id="nav-drawer">
                         <button onClick={handleMenuOpen} className={
                             openMenu
