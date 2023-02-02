@@ -44,8 +44,8 @@ export default function Header() {
                                 <li><Link href="./news/">NEWS</Link></li>
                                 <li><Link href="./menu/">MENU</Link></li>
                                 <li><Link href="./gallery/">GALLERY</Link></li>
-                                <li><Link href="./access/">ACCESS</Link></li>
-                                <li><Link href="./reserve/">RESERVE</Link></li>
+                                <li><Link href="./access/#access">ACCESS</Link></li>
+                                <li><Link href="./access/#reserve">RESERVE</Link></li>
                             </ul>
                         </nav>
                     </div>

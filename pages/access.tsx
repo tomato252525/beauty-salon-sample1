@@ -1,19 +1,48 @@
+import Header from "@/components/Header";
+import Image from "next/image";
 import Link from "next/link";
+import { motion } from 'framer-motion'
 
-export default function Footer() {
+export default function Access() {
     return (
-        <>
-            <footer className="fixed bottom-0 w-screen text-white pb-5">
-                <div className="flex justify-between pl-3 md:px-10">
-                    <div>
-                        <div className="py-1 block md:flex">
-                            <p>〒000-0000　</p>
-                            <p>○○県○○市○○○○ 00-00</p>
-                        </div>
-                        <p>営業時間：08:30 ~ 18:00</p>
-                        <p>定休日　：毎週月曜日＆第2第3火曜日</p>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed top-0 left-0 w-full h-screen overflow-hidden z-[-1]"
+            >
+                <Image className="object-cover" src="/reserve-bg.jpg" layout="fill" alt="" />
+            </motion.div>
+            <Header />
+            <main className="h-screen text-white py-16 md:py-28">
+                <div className="p-5" id="access">
+                    <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">ACCESS</h1>
+                    <div className="px-5 md:px-16 block md:flex">
+                        <p className="hidden md:block">住所：</p>
+                        <p>〒000-0000　</p>
+                        <p>○○県○○市○○○○ 00-00</p>
                     </div>
-                    <div className="hidden md:block">
+                    <div className="px-5 pt-5 md:px-16 md:pb-5">
+                        <p>最寄り駅：○○○○</p>
+                        <p>バス停　：○○○○</p>
+                        <div className="mt-5 md:mb-5">
+                            <button className="btn group flex items-center bg-transparent p-2 px-6 text-xl font-thin">
+                                <Link href="https://www.google.co.jp/maps" target="_blank" rel="noopener noreferrer" className="relative pr-4 pb-1 after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100">Google Map</Link>
+                                <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal" className="-translate-x-2 fill-white transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:scale-x-105">
+                                    <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className="p-5" id="reserve">
+                    <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">RESERE</h1>
+                    <div className="px-5 md:px-16">
                         <button className="btn group flex items-center bg-transparent p-2 px-6 text-xl font-thin">
                             <Link href="tel:000-000-0000" className="flex relative pr-4 pb-1 after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4">
@@ -36,14 +65,13 @@ export default function Footer() {
                                 <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
                             </svg>
                         </button>
-                    </div>
-                    <Link href="./access/#reserve" className="absolute bottom-0 right-0 mr-3 mb-7 block md:hidden">
-                        <div className="relative flex overflow-hidden items-center justify-center rounded-full w-[60px] h-[60px] transition-all ring-2 ring-white hover:ring-8 group-focus:ring-4 duration-200 shadow-md">
-                            予約
+                        <div className="my-5">
+                            <p>営業時間：08:30 ~ 18:00</p>
+                            <p>定休日　：毎週月曜日＆第2第3火曜日</p>
                         </div>
-                    </Link>
+                    </div>
                 </div>
-            </footer>
-        </>
+            </main>
+        </motion.div >
     )
 }

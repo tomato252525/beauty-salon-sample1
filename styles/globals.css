@@ -6,6 +6,10 @@ a {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
+button {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
 .splide.is-initialized {
     position: fixed;
     top: 0;

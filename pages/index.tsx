@@ -52,7 +52,7 @@ export default function Home() {
           </SplideSlide>
         </Splide>
         <div className="absolute inset-0 flex items-center justify-center text-white">
-          <p>Welcome Page!</p>
+          <p></p>
         </div>
       </main>
       <Footer />
