@@ -18,8 +18,17 @@ export type Category = {
     name: string;
 }
 
-export const getStaticProps = async () => {
-    const offset = 0;
+export const getStaticPaths = async () => {
+    const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i);
+    const data = await client.get({ endpoint: 'news' });
+
+    const paths = range(1, Math.ceil(Number(data.totalCount) / 10)).map((i) => `/news/page/${i}`);
+    return { paths, fallback: false };
+};
+
+export const getStaticProps = async (context: { params: { id: any } }) => {
+    const numId = Number(context.params.id);
+    const offset = (numId - 1) * 10;
     const limit = 10;
     const queries = { offset: offset, limit: limit };
     const data = await client.get({ endpoint: "news", queries: queries });
@@ -33,6 +42,7 @@ export const getStaticProps = async () => {
         props: {
             news: data.contents,
             totalCount: data.totalCount,
+            currentPageNumber: numId,
             createDate,
         },
     };
@@ -41,10 +51,11 @@ export const getStaticProps = async () => {
 type Props = {
     news: News[];
     totalCount: number;
+    currentPageNumber: number,
     createDate: string[];
 };
 
-export default function News({ news, totalCount, createDate }: Props) {
+export default function NewsPageId({ news, totalCount, currentPageNumber, createDate }: Props) {
     var i = 0;
     return (
         <motion.div
@@ -67,14 +78,14 @@ export default function News({ news, totalCount, createDate }: Props) {
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">NEWS</h1>
                     <div className="content">
                         {news.map((news) => (
-                            <Link key={news.id} href={`news/${news.id}`} scroll={false} className="flex my-3 md:my-7 md:pl-5 md:ml-16 text-sm md:text-base">
+                            <Link key={news.id} href={`../${news.id}`} scroll={false} className="flex my-3 md:my-7 md:pl-5 md:ml-16 text-sm md:text-base">
                                 <div className="news-item-w">{createDate[i++]}</div>
                                 <div className="news-item-w hidden md:block">[{news.category.name}]</div>
                                 <div className="break-all">{news.title}</div>
                             </Link>
                         ))}
                         <div className="my-5 md:my-10 md:pl-5 md:ml-16">
-                            <Pagination currentPageNumber={1} maxPageNumber={Math.ceil(totalCount / 10)} whatPage="news" />
+                            <Pagination currentPageNumber={currentPageNumber} maxPageNumber={Math.ceil(totalCount / 10)} whatPage="news" />
                         </div>
                     </div>
                 </div>

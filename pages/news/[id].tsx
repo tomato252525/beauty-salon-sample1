@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion } from 'framer-motion'
 import { client } from "@/libs/client"
 import styles from '@/styles/Home.module.scss'
+import Link from "next/link"
 
 
 export type News = {
@@ -74,13 +75,19 @@ export default function NewsId({ news, createDate }: Props) {
                 <div className="p-5" id="news">
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">NEWS</h1>
                     <div className="content">
-                        <div className={styles.main}>
-                            <p>{news.category.name}</p>
+                        <div className="news-main md:pl-5 md:ml-16 break-all">
+                            <p className={styles.publishedAt}>{createDate}　[{news.category.name}]</p>
                             <h1 className={styles.title}>{news.title}</h1>
-                            <p className={styles.publishedAt}>{createDate}</p>
                             <div dangerouslySetInnerHTML={{ __html: `${news.content}` }} className={styles.post}></div>
 
-                            <a className=" my-5" href="../news">戻る</a>
+                            <div className="my-14">
+                                <Link className="inline-flex hover:text-green-500" href="../news" scroll={false}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                    <p>NEWS TOP</p>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
