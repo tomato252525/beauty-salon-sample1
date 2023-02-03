@@ -41,9 +41,10 @@ export default function Header() {
                                 : 'nav-bg element'
                         }>
                             <ul className="menu">
+                                <li><Link href="./" scroll={false}>TOP</Link></li>
                                 <li><Link href="./news/" scroll={false}>NEWS</Link></li>
                                 <li><Link href="./menu/" scroll={false}>MENU</Link></li>
-                                <li><Link href="./gallery/" scroll={false}>GALLERY</Link></li>
+                                <li><Link href="./gallery" scroll={false}>GALLERY</Link></li>
                                 <li><Link href="./access/" scroll={false}>ACCESS</Link></li>
                                 <li><Link href="./access/" scroll={false}>RESERVE</Link></li>
                             </ul>

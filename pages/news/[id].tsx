@@ -3,13 +3,18 @@ import Header from "@/components/Header"
 import Image from "next/image"
 import { motion } from 'framer-motion'
 import { client } from "@/libs/client"
-import Link from "next/link"
+import styles from '@/styles/Home.module.scss'
 
 
 export type News = {
     id: string;
     title: string;
+    content: string;
     category: Category;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    revisedAt: string;
 };
 
 export type Category = {
@@ -17,28 +22,37 @@ export type Category = {
     name: string;
 }
 
-export const getStaticProps = async () => {
-    const data = await client.get({ endpoint: "news" });
-    const createDate = data.contents.map((content: { publishedAt: string }) =>
-        new Date(Date.parse(content.publishedAt) + 32400000)
-            .toLocaleDateString('ja-JP')
-            .replace(/\//g, '/')
-    );
+export const getStaticProps = async (context: { params: { id: any } }) => {
+    const id = context.params.id;
+    const data = await client.get({ endpoint: "news", contentId: id });
+    const createDate = new Date(Date.parse(data.publishedAt) + 32400000)
+        .toLocaleDateString('ja-JP')
+        .replace(/\//g, '/');
 
     return {
         props: {
-            news: data.contents,
+            news: data,
             createDate,
         },
     };
 };
 
-type Props = {
-    news: News[];
-    createDate: string[];
+export const getStaticPaths = async () => {
+    const data = await client.get({ endpoint: "news" });
+    const paths = data.contents.map((content: { id: any }) => `/news/${content.id}`);
+
+    return {
+        paths,
+        fallback: false,
+    };
 };
 
-export default function News({ news, createDate }: Props) {
+type Props = {
+    news: News;
+    createDate: string;
+};
+
+export default function NewsId({ news, createDate }: Props) {
     var i = 0;
     return (
         <motion.div
@@ -60,13 +74,14 @@ export default function News({ news, createDate }: Props) {
                 <div className="p-5" id="news">
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">NEWS</h1>
                     <div className="content">
-                        {news.map((news) => (
-                            <Link key={news.id} href={`news/${news.id}`} className="flex my-3 md:my-7 md:px-5 md:mx-16 text-sm md:text-base">
-                                <div className="news-item-w">{createDate[i++]}</div>
-                                <div className="news-item-w hidden md:block">[{news.category.name}]</div>
-                                <div className="break-all">{news.title}</div>
-                            </Link>
-                        ))}
+                        <div className={styles.main}>
+                            <p>{news.category.name}</p>
+                            <h1 className={styles.title}>{news.title}</h1>
+                            <p className={styles.publishedAt}>{createDate}</p>
+                            <div dangerouslySetInnerHTML={{ __html: `${news.content}` }} className={styles.post}></div>
+
+                            <a className=" my-5" href="../news">戻る</a>
+                        </div>
                     </div>
                 </div>
             </main>

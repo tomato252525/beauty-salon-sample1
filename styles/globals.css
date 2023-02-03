@@ -71,6 +71,10 @@ dd::before {
     content: "¥";
 }
 
+.news-item-w {
+    min-width: 90px;
+}
+
 @media (min-width: 992px) {
     .content {
         margin-right: 50%;
