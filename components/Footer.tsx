@@ -37,7 +37,7 @@ export default function Footer() {
                             </svg>
                         </button>
                     </div>
-                    <Link href="./access" scroll={false} className="absolute bottom-0 right-0 mr-3 mb-7 block md:hidden">
+                    <Link href="/access" scroll={false} className="absolute bottom-0 right-0 mr-3 mb-7 block md:hidden">
                         <div className="relative flex overflow-hidden items-center justify-center rounded-full w-[60px] h-[60px] transition-all ring-2 ring-white hover:ring-8 group-focus:ring-4 duration-200 shadow-md">
                             予約
                         </div>

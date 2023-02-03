@@ -81,7 +81,7 @@ export default function NewsId({ news, createDate }: Props) {
                             <div dangerouslySetInnerHTML={{ __html: `${news.content}` }} className={styles.post}></div>
 
                             <div className="my-14">
-                                <Link className="inline-flex hover:text-green-500" href="../news" scroll={false}>
+                                <Link className="inline-flex hover:text-green-500" href="/news" scroll={false}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                                     </svg>

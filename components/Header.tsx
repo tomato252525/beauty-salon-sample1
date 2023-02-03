@@ -11,7 +11,7 @@ export default function Header() {
         <>
             <header className="h-16 fixed top-0 w-screen text-white z-[9999]">
                 <div className="pt-5 flex justify-between pl-3 md:pl-10">
-                    <Link className="text-4xl font-bold" href="./" scroll={false}>B-S-1</Link>
+                    <Link className="text-4xl font-bold" href="/" scroll={false}>B-S-1</Link>
                     <div id="nav-drawer">
                         <button onClick={handleMenuOpen} className={
                             openMenu
@@ -41,12 +41,12 @@ export default function Header() {
                                 : 'nav-bg element'
                         }>
                             <ul className="menu">
-                                <li><Link href="./" scroll={false}>TOP</Link></li>
-                                <li><Link href="./news/" scroll={false}>NEWS</Link></li>
-                                <li><Link href="./menu/" scroll={false}>MENU</Link></li>
-                                <li><Link href="./gallery" scroll={false}>GALLERY</Link></li>
-                                <li><Link href="./access/" scroll={false}>ACCESS</Link></li>
-                                <li><Link href="./access/" scroll={false}>RESERVE</Link></li>
+                                <li><Link href="/" scroll={false}>TOP</Link></li>
+                                <li><Link href="/news/" scroll={false}>NEWS</Link></li>
+                                <li><Link href="/menu/" scroll={false}>MENU</Link></li>
+                                <li><Link href="/gallery" scroll={false}>GALLERY</Link></li>
+                                <li><Link href="/access/" scroll={false}>ACCESS</Link></li>
+                                <li><Link href="/access/" scroll={false}>RESERVE</Link></li>
                             </ul>
                         </nav>
                     </div>

@@ -53,6 +53,10 @@ export default function Access() {
                 <div className="p-5" id="reserve">
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">RESERE</h1>
                     <div className="px-5 md:px-16">
+                        <div className="mb-5">
+                            <p>営業時間：08:30 ~ 18:00</p>
+                            <p>定休日　：毎週月曜日＆第2第3火曜日</p>
+                        </div>
                         <button className="btn group flex items-center bg-transparent p-2 px-6 text-xl font-thin">
                             <Link href="tel:000-000-0000" scroll={false} className="font-bold md:font-normal flex relative pr-4 pb-1 after:transition-transform after:duration-500 after:ease-out after:absolute after:bottom-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4">
@@ -75,10 +79,6 @@ export default function Access() {
                                 <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
                             </svg>
                         </button>
-                        <div className="my-5">
-                            <p>営業時間：08:30 ~ 18:00</p>
-                            <p>定休日　：毎週月曜日＆第2第3火曜日</p>
-                        </div>
                     </div>
                 </div>
             </main>
