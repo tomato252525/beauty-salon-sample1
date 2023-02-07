@@ -45,8 +45,7 @@ export default function Header() {
                                 <li><Link href="/news/" scroll={false}>NEWS</Link></li>
                                 <li><Link href="/menu/" scroll={false}>MENU</Link></li>
                                 <li><Link href="/gallery" scroll={false}>GALLERY</Link></li>
-                                <li><Link href="/access/" scroll={false}>ACCESS</Link></li>
-                                <li><Link href="/access/" scroll={false}>RESERVE</Link></li>
+                                <li><Link href="/reserve/" scroll={false}>RESERVE</Link></li>
                             </ul>
                         </nav>
                     </div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from 'framer-motion'
 
-export default function Access() {
+export default function Reserve() {
     return (
         <motion.div
             initial={{ opacity: 0 }}

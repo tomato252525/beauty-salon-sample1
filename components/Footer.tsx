@@ -6,10 +6,14 @@ export default function Footer() {
             <footer className="fixed bottom-0 w-screen text-white pb-5">
                 <div className="flex justify-between pl-3 md:px-10">
                     <div>
-                        <div className="my-3 md:my-1 block md:flex">
-                            <p>〒000-0000　</p>
-                            <p>○○県○○市○○○○ 00-00</p>
-                        </div>
+                        <Link href="https://www.google.co.jp/maps" scroll={false} target="_blank" rel="noopener noreferrer" className="my-3 md:my-1 block md:flex">
+                            <div className="flex">
+                                <p>〒000-0000　</p>
+                                <p className="md:hidden">(GoogleMap)</p>
+                            </div>
+                            <p>○○県○○市○○○○ 00-00　</p>
+                            <p className="hidden md:block">(GoogleMap)</p>
+                        </Link>
                         <p>営業時間：08:30 ~ 18:00</p>
                         <p>定休日　：毎週月曜日＆第2第3火曜日</p>
                     </div>
@@ -37,7 +41,7 @@ export default function Footer() {
                             </svg>
                         </button>
                     </div>
-                    <Link href="/access" scroll={false} className="absolute bottom-0 right-0 mr-3 mb-7 block md:hidden">
+                    <Link href="/reserve" scroll={false} className="absolute bottom-0 right-0 mr-3 mb-7 block md:hidden">
                         <div className="relative flex overflow-hidden items-center justify-center rounded-full w-[60px] h-[60px] transition-all ring-2 ring-white hover:ring-8 group-focus:ring-4 duration-200 shadow-md">
                             予約
                         </div>

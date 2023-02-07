@@ -78,13 +78,15 @@ export default function NewsPageId({ news, totalCount, currentPageNumber, create
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">NEWS</h1>
                     <div className="content pt-10 md:pt-0">
                         {news.map((news) => (
-                            <Link key={news.id} href={`/news/${news.id}`} scroll={false} className="flex my-3 md:my-7 md:pl-5 md:ml-16 text-sm md:text-base">
-                                <div className="news-item-w">{createDate[i++]}</div>
-                                <div className="news-item-w hidden md:block">[{news.category.name}]</div>
-                                <div className="break-all">{news.title}</div>
-                            </Link>
+                            <div key={news.id} className="my-3 md:my-7">
+                                <Link href={`/news/${news.id}`} scroll={false} className="inline-flex my-0 md:pl-5 md:ml-16 text-sm md:text-base">
+                                    <div className="news-item-w">{createDate[i++]}</div>
+                                    <div className="news-item-w hidden md:block">[{news.category.name}]</div>
+                                    <div className="break-all">{news.title}</div>
+                                </Link>
+                            </div>
                         ))}
-                        <div className="my-5 md:my-10 md:pl-5 md:ml-16">
+                        <div className="my-10 md:pl-5 md:ml-16">
                             <Pagination currentPageNumber={currentPageNumber} maxPageNumber={Math.ceil(totalCount / 10)} whatPage="news" />
                         </div>
                     </div>

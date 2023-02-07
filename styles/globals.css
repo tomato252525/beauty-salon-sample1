@@ -72,6 +72,19 @@ dd::before {
     }
 }
 
+@media (max-width: 992px) {
+    .element a .line-c {
+        line-height: 0;
+        text-align: center;
+    }
+    .element a .line-t {
+        text-align: center;
+    }
+    .element a .line-e {
+        text-align: center;
+    }
+}
+
 .title {
     margin-bottom: 30px;
     margin-top: 30px;

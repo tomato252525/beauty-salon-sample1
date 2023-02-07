@@ -25,10 +25,10 @@ export default function Gallery() {
             <main className="text-white pt-16 md:pt-28">
                 <div className="p-5" id="gallery">
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">GALLERY</h1>
-                    <div className="md:mx-32">
+                    <div className="lg:mx-32 xl:mx-72">
                         <Splide
                             aria-label="bg"
-                            className="bg-white"
+                            className="bg-white p-1"
                             options={{
                                 type: 'fade',
                                 rewind: true,
@@ -36,7 +36,7 @@ export default function Gallery() {
                                 pauseOnHover: false,
                                 pauseOnFocus: false,
                                 width: "100%",
-                                height: 500,
+                                heightRatio: 0.6,
                             }}
                         >
                             <SplideSlide className="relative overflow-hidden">
