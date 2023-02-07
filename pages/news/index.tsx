@@ -65,7 +65,7 @@ export default function News({ news, totalCount, createDate }: Props) {
             <main className="text-white pt-16 md:pt-28">
                 <div className="p-5" id="news">
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">NEWS</h1>
-                    <div className="content">
+                    <div className="content pt-10 md:pt-0">
                         {news.map((news) => (
                             <Link key={news.id} href={`/news/${news.id}`} scroll={false} className="flex my-3 md:my-7 md:pl-5 md:ml-16 text-sm md:text-base">
                                 <div className="news-item-w">{createDate[i++]}</div>

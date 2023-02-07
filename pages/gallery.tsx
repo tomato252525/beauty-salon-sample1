@@ -3,6 +3,7 @@ import Header from "@/components/Header"
 import Image from "next/image"
 import { motion } from 'framer-motion'
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide"
+import '@splidejs/react-splide/css'
 
 export default function Gallery() {
     return (
