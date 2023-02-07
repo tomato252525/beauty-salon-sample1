@@ -26,9 +26,34 @@ export default function Gallery() {
                 <div className="p-5" id="gallery">
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">GALLERY</h1>
                     <div className="lg:mx-32 xl:mx-72">
+                        <p className="font-bold text-xl">～外観～</p>
                         <Splide
                             aria-label="bg"
-                            className="bg-white p-1"
+                            className="bg-white p-1 mb-10"
+                            options={{
+                                type: 'fade',
+                                rewind: true,
+                                speed: 2000,
+                                pauseOnHover: false,
+                                pauseOnFocus: false,
+                                width: "100%",
+                                heightRatio: 0.6,
+                            }}
+                        >
+                            <SplideSlide className="relative overflow-hidden">
+                                <Image className="object-cover" src="/bg-sample1.jpg" fill alt="" />
+                            </SplideSlide>
+                            <SplideSlide className="relative overflow-hidden">
+                                <Image className="object-cover" src="/bg-sample2.jpg" fill alt="" />
+                            </SplideSlide>
+                            <SplideSlide className="relative overflow-hidden">
+                                <Image className="object-cover" src="/bg-sample3.jpg" fill alt="" />
+                            </SplideSlide>
+                        </Splide>
+                        <p className="font-bold text-xl">～内装～</p>
+                        <Splide
+                            aria-label="bg"
+                            className="bg-white p-1 mb-5"
                             options={{
                                 type: 'fade',
                                 rewind: true,
