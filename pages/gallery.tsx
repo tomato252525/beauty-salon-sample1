@@ -28,7 +28,7 @@ export default function Gallery() {
                     <div className="lg:mx-32 xl:mx-72">
                         <p className="font-bold text-xl">～外観～</p>
                         <Splide
-                            aria-label="bg"
+                            aria-label="exterior"
                             className="bg-white p-1 mb-10"
                             options={{
                                 type: 'fade',
@@ -52,7 +52,7 @@ export default function Gallery() {
                         </Splide>
                         <p className="font-bold text-xl">～内装～</p>
                         <Splide
-                            aria-label="bg"
+                            aria-label="interior"
                             className="bg-white p-1 mb-5"
                             options={{
                                 type: 'fade',
