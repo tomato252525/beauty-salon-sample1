@@ -2,9 +2,9 @@ import Head from "next/head"
 import Header from "@/components/Header"
 import Image from "next/image"
 import { motion } from 'framer-motion'
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide"
 
 export default function Gallery() {
-    var i = 0;
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -12,7 +12,7 @@ export default function Gallery() {
             exit={{ opacity: 0 }}
         >
             <div className="fixed top-0 left-0 w-full h-screen overflow-hidden z-[-1]">
-                <Image className="object-cover" src="/reserve-bg.jpg" layout="fill" alt="" />
+                <Image className="object-cover" src="/reserve-bg.jpg" fill alt="" />
             </div>
             <Head>
                 <title>GALLERY | Beauty Salon 1</title>
@@ -22,8 +22,33 @@ export default function Gallery() {
             </Head>
             <Header />
             <main className="text-white pt-16 md:pt-28">
-                <div className="p-5" id="news">
+                <div className="p-5" id="gallery">
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">GALLERY</h1>
+                    <div className="md:mx-32">
+                        <Splide
+                            aria-label="bg"
+                            className="bg-white"
+                            options={{
+                                type: 'fade',
+                                rewind: true,
+                                speed: 2000,
+                                pauseOnHover: false,
+                                pauseOnFocus: false,
+                                width: "100%",
+                                height: 500,
+                            }}
+                        >
+                            <SplideSlide className="relative overflow-hidden">
+                                <Image className="object-cover" src="/bg-sample1.jpg" fill alt="" />
+                            </SplideSlide>
+                            <SplideSlide className="relative overflow-hidden">
+                                <Image className="object-cover" src="/bg-sample2.jpg" fill alt="" />
+                            </SplideSlide>
+                            <SplideSlide className="relative overflow-hidden">
+                                <Image className="object-cover" src="/bg-sample3.jpg" fill alt="" />
+                            </SplideSlide>
+                        </Splide>
+                    </div>
                 </div>
             </main>
         </motion.div >

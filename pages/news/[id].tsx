@@ -3,7 +3,6 @@ import Header from "@/components/Header"
 import Image from "next/image"
 import { motion } from 'framer-motion'
 import { client } from "@/libs/client"
-import styles from '@/styles/Home.module.scss'
 import Link from "next/link"
 
 
@@ -38,8 +37,8 @@ export const getStaticProps = async (context: { params: { id: any } }) => {
     };
 };
 
-export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: "news" });
+export const getStaticPaths = async (context: { params: { id: any } }) => {
+    const data = await client.get({ endpoint: "news", queries: { limit: 1000 } });
     const paths = data.contents.map((content: { id: any }) => `/news/${content.id}`);
 
     return {
@@ -62,7 +61,7 @@ export default function NewsId({ news, createDate }: Props) {
             exit={{ opacity: 0 }}
         >
             <div className="fixed top-0 left-0 w-full h-screen overflow-hidden z-[-1]">
-                <Image className="object-cover" src="/reserve-bg.jpg" layout="fill" alt="" />
+                <Image className="object-cover" src="/reserve-bg.jpg" fill alt="" />
             </div>
             <Head>
                 <title>NEWS | Beauty Salon 1</title>
@@ -76,9 +75,9 @@ export default function NewsId({ news, createDate }: Props) {
                     <h1 className="text-6xl px-0 pb-10 font-bold md:px-14">NEWS</h1>
                     <div className="content">
                         <div className="news-main md:pl-5 md:ml-16 break-all">
-                            <p className={styles.publishedAt}>{createDate}　[{news.category.name}]</p>
-                            <h1 className={styles.title}>{news.title}</h1>
-                            <div dangerouslySetInnerHTML={{ __html: `${news.content}` }} className={styles.post}></div>
+                            <p className="publishedAt">{createDate}　[{news.category.name}]</p>
+                            <h1 className="title">{news.title}</h1>
+                            <div dangerouslySetInnerHTML={{ __html: `${news.content}` }} className="post"></div>
 
                             <div className="my-14">
                                 <Link className="inline-flex hover:text-green-500" href="/news" scroll={false}>

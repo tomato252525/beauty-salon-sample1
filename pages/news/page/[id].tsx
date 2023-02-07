@@ -64,7 +64,7 @@ export default function NewsPageId({ news, totalCount, currentPageNumber, create
             exit={{ opacity: 0 }}
         >
             <div className="fixed top-0 left-0 w-full h-screen overflow-hidden z-[-1]">
-                <Image className="object-cover" src="/reserve-bg.jpg" layout="fill" alt="" />
+                <Image className="object-cover" src="/reserve-bg.jpg" fill alt="" />
             </div>
             <Head>
                 <title>NEWS | Beauty Salon 1</title>

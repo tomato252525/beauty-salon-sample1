@@ -10,15 +10,6 @@ button {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
-.splide.is-initialized {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-}
-
 .menu-trigger {
     position: absolute;
     top: 0px;
@@ -79,4 +70,49 @@ dd::before {
     .content {
         margin-right: 50%;
     }
+}
+
+.title {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+  
+.publishedAt {
+    margin-top: 30px;
+}
+  
+.post > h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 0 20px;
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+  
+.post > h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 40px 0 16px;
+    border-bottom: 1px solid #ddd;
+}
+  
+.post > p {
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+}
+  
+.post > ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+  
+.post > p > img {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

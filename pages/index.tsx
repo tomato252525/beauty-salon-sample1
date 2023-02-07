@@ -40,13 +40,13 @@ export default function Home() {
           }}
         >
           <SplideSlide className="h-screen overflow-hidden">
-            <Image className="object-cover" src="/bg-sample1.jpg" layout="fill" alt="" />
+            <Image className="object-cover" src="/bg-sample1.jpg" fill alt="" />
           </SplideSlide>
           <SplideSlide className="h-screen overflow-hidden">
-            <Image className="object-cover" src="/bg-sample2.jpg" layout="fill" alt="" />
+            <Image className="object-cover" src="/bg-sample2.jpg" fill alt="" />
           </SplideSlide>
           <SplideSlide className="h-screen overflow-hidden">
-            <Image className="object-cover" src="/bg-sample3.jpg" layout="fill" alt="" />
+            <Image className="object-cover" src="/bg-sample3.jpg" fill alt="" />
           </SplideSlide>
         </Splide>
         <div className="absolute inset-0 flex items-center justify-center text-white">
